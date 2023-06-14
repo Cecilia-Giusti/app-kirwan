@@ -1,0 +1,14 @@
+{
+  "name": "app-kirwan",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "gsap": "^3.12.1",
+    "sass": "^1.63.4"
+  },
+  "scripts": {
+    "sass": "sass --watch ./src/styles/index.scss:./public/styles.css --style compressed"
+  }
+}
