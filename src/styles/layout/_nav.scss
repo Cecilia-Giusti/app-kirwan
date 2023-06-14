@@ -1,0 +1,50 @@
+.nav {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+
+  &-list {
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    @include flex($justify: space-around);
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      height: 1px;
+      background: $color-secondary;
+      opacity: 0.3;
+    }
+  }
+
+  &-item {
+    @include flex;
+    flex-direction: column-reverse;
+    cursor: pointer;
+    gap: 15px;
+    &-circle {
+      color: $color-secondary;
+      font-size: 0.5em;
+    }
+    &-link {
+      font-family: $font-subtitle;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 17px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      color: $color-secondary;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.button-nav {
+  border: 1px solid $color-tertiary;
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+
+  &-bar {
+    width: 22px;
+    height: 7px;
+    border-top: 1px solid $color-tertiary;
+    border-bottom: 1px solid $color-tertiary;
+  }
+}

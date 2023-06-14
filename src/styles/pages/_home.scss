@@ -1,0 +1,36 @@
+.home {
+  @include screenFull;
+  @include flex;
+
+  &-img-bg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+
+  &-content {
+    color: $color-tertiary;
+
+    &-text {
+      font-style: italic;
+      font-family: $font-subtitle;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 95%;
+    }
+
+    &-title {
+      font-style: normal;
+      line-height: 95%;
+      font-weight: 400;
+      font-family: $font-subtitle;
+      font-size: 120px;
+      text-align: center;
+    }
+  }
+}

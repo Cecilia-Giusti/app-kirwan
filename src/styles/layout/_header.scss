@@ -1,0 +1,29 @@
+.header {
+  width: 100%;
+  position: fixed;
+  @include flex($justify: space-between);
+  padding: 25px;
+  z-index: 10;
+
+  &-button-fr,
+  &-button-en {
+    font-family: $font-subtitle;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $color-tertiary;
+    opacity: 0.5;
+    transition-duration: 200ms;
+    &:hover {
+      opacity: 1;
+      transition-duration: 200ms;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
