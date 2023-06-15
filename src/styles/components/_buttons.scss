@@ -1,8 +1,11 @@
 .button-nav {
+  opacity: 0;
   border: 1px solid $color-tertiary;
   width: 35px;
   height: 35px;
   border-radius: 30px;
+  position: relative;
+  top: -20px;
 
   &-bar {
     width: 22px;
