@@ -1,4 +1,22 @@
 /**
+ * Handles hover events on navigation items.
+ */
+const navOver = () => {
+  const items = document.querySelectorAll(".nav-item");
+
+  items.forEach((item) => {
+    const link = item.querySelector(".nav-item-link");
+    item.addEventListener("mouseenter", (e) => {
+      gsap.to(link, { autoAlpha: 1, duration: 0.6, y: "-20px" });
+    });
+
+    item.addEventListener("mouseleave", (e) => {
+      gsap.to(link, { autoAlpha: 0, duration: 0.6, y: "20px" });
+    });
+  });
+};
+
+/**
  * TimeLine that begins at the start
  */
 const loader = () => {
@@ -39,7 +57,7 @@ const loader = () => {
     })
     .to(logo, { y: "-23vh", scale: 0.4, duration: 1 })
     .to(lineFirst, { y: `${hauteurLine}vh`, duration: 1 }, "-=1")
-    .to(navCircles, { y: `${hauteurLine + 0.2}vh`, duration: 1 }, "-=1")
+    .to(navCircles, { y: `${hauteurLine - 0.2}vh`, duration: 1 }, "-=1")
     .to(background, { autoAlpha: 0, duration: 1 })
     .to(backgroundDark, { autoAlpha: 0, duration: 1 }, "-=1")
     .to(
@@ -58,6 +76,10 @@ const loader = () => {
         opacity: 0,
         duration: 3,
         ease: "power2",
+        onComplete: function () {
+          navItems.forEach((item) => item.classList.add("pointer"));
+          navOver();
+        },
       },
       "-=3"
     )
@@ -68,35 +90,13 @@ const loader = () => {
         opacity: 0,
         duration: 1,
         ease: "power1",
-        onComplete: function () {
-          navItems.forEach((item) => item.classList.add("pointer"));
-        },
       },
       "-=3"
     );
 };
 
-/**
- * Handles hover events on navigation items.
- */
-const navOver = () => {
-  const items = document.querySelectorAll(".nav-item");
-
-  items.forEach((item) => {
-    const link = item.querySelector(".nav-item-link");
-    item.addEventListener("mouseenter", (e) => {
-      gsap.to(link, { autoAlpha: 1, duration: 0.6, y: 0 });
-    });
-
-    item.addEventListener("mouseleave", (e) => {
-      gsap.to(link, { autoAlpha: 0, duration: 0.6, y: 20 });
-    });
-  });
-};
-
 const init = () => {
   loader();
-  navOver();
 };
 
 init();

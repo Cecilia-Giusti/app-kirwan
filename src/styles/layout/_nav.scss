@@ -33,6 +33,7 @@
     margin: auto;
     visibility: hidden;
     opacity: 0;
+    bottom: 40vh - 0.2;
   }
 
   &-item {
@@ -49,22 +50,23 @@
       color: $color-secondary;
       font-size: 8px;
       position: absolute;
-      bottom: 40vh - 0.3;
     }
 
     &-link {
       font-family: $font-subtitle;
       font-style: normal;
       font-weight: 400;
-      font-size: 15px;
+      font-size: 0.8vw;
       line-height: 17px;
       text-align: center;
       letter-spacing: 0.1em;
       color: $color-secondary;
+      overflow: visible;
+      white-space: nowrap;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(20px);
       position: absolute;
+      top: -20px;
     }
   }
 }
