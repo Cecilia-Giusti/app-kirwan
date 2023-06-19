@@ -21,59 +21,97 @@
 </head>
 
 <body>
+ <div class="wrapper">
     <header class="header">
         <div class="header-button-languages">
             <button class="header-button-fr active">FR</button>
             <button class="header-button-en">EN</button>
         </div>
         <img src="./images/logo-M.png" alt="Logo de Kirwan" class="header-logo" id="logoHeader">
+        <!-- A voir pour mettre une icone ou enlever div -->
         <button class="button-nav">
             <div class='button-nav-bar'></div>
         </button>
     </header>
-    <main>
+    <main class="main">
         <div class="loading-background"></div>
         <div class="loading-background-dark"></div>
-        <section class="home">
-            <img class="home-img-bg" src="./images/photo-château.png" alt="Chateau de Kirwan" />
-            <div class="home-content">
-                <p class="home-content-text">Vivez</p>
-                <h2 class="home-content-title">L’expérience <br />
-                    de l’instant
-                </h2>
-            </div>
-        </section>
+        <div class="homeWinesQuotesSections">
+            <img class="homeWinesQuotesSections-img-bg" src="./images/photo-château.png" alt="Chateau de Kirwan" />
+            <section class="home section">
+                <div class="home-content">
+                    <p class="home-content-text">Vivez</p>
+                    <h2 class="home-content-title">L’expérience <br />
+                        de l’instant
+                    </h2>
+                </div>
+            </section>
+            <section class="wines section">
+                <img class="wines-img wines-img-trunk" src="./images/arbre-second-plan.png"
+                    alt="Tronc d'arbre au deuxieme plan">
+                <img class="wines-img wines-img-leaf" src="./images/feuille-premier-plan.png"
+                    alt="Branche d'arbre du Chateau au premier plan">
+                <div class="wines-content">
+                    <p class="wines-content-text">Déguster nos</p>
+                    <h1 class="wines-content-title">Vins </h1>
+                    <p class="wines-content-paragraph">Essence et raison d’être, à Kirwan, le vin est au centre de tout.
+                        Dépositaire d’une année
+                        d’attentions et de soins au vignoble, chaque millésime est une révélation, entre impatiences et
+                        espoirs.</p>
+                    <div class="links-wrapper">
+                        <a class="wines-content-link" href="/">Découvrir nos vins</a>
+                        <div class="links">
+                            <div class="links-underline links-underline-first"></div>
+                            <div class="links-underline links-underline-second"></div>
+                            <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle links-circle"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wines-bottle">
+                    <div class="wines-bottle-content">
+                        <button class="button-play wines-bottle-button"><i class="fa-solid fa-play wines-bottle-icon button-play-icon"></i>
+                        </button>
+                        <svg width="175" height="2" class="wines-bottle-line" viewBox="0 0 175 2" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 1H175" stroke="white" stroke-dasharray="10 10" />
+                        </svg>
+                    </div>
+                    <img class="wines-img wines-img-bottle" src="./images/bouteille-kirwan.png"
+                        alt="Bouteille de vin du chateau de Kirwan">
+                </div>
+            </section>
+        </div>
 
         <nav class="nav">
             <div class="nav-line-first"></div>
             <div class="nav-line-second"></div>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Nos vins</a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Notre histoire </a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Notre terroir</a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Visites & Ateliers</a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Réception & Hospitalité</a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-sharp fa-solid fa-circle nav-item-circle"></i>
+                    <i class="fa-sharp fa-solid fa-circle nav-item-circle icon-circle"></i>
                     <a class="nav-item-link" href="">Actualités</a>
                 </li>
             </ul>
@@ -81,7 +119,9 @@
     </main>
     <footer></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="../src/scripts/index.js" type="module"></script>
+</div>
 </body>
 
 </html>

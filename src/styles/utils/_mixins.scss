@@ -1,6 +1,6 @@
-@mixin screenFull {
-  width: 100%;
-  min-height: 100vh;
+@mixin screenFull($widthSize: 100%) {
+  width: $widthSize;
+  height: 100vh;
 }
 
 @mixin flex($justify: center, $align: center) {
@@ -14,4 +14,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin title($weight: 400, $align: center) {
+  font-family: $font-title;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: 6.3vw;
+  line-height: 95%;
+  text-align: $align;
+}
+
+@mixin subtitle($weight: 400, $align: center, $style: italic) {
+  font-style: $style;
+  font-family: $font-title;
+  text-align: $align;
+  font-size: 1.5vw;
+  font-weight: ùweight;
+  line-height: 95%;
 }

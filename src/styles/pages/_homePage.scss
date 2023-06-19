@@ -1,0 +1,179 @@
+.loading-background {
+  @include screenFull;
+  background: $color-primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  @include flex;
+  flex-direction: column;
+  gap: 134px;
+
+  &-dark {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $color-primary;
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
+    opacity: 0;
+    z-index: 10;
+  }
+}
+
+.homeWinesQuotesSections {
+
+  width: 200vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &-img-bg {
+    @include screenFull($widthSize: 100vw);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+.section {
+  @include screenFull;
+  @include flex;
+}
+
+.home {
+  @include screenFull($widthSize: 100vw);
+
+  &-content {
+    color: $color-tertiary;
+
+    &-text {
+      @include subtitle;
+    }
+
+    &-title {
+      @include title;
+    }
+  }
+}
+
+.wines {
+  @include screenFull($widthSize: 100vw);
+  position: relative;
+
+  &-img {
+    position: absolute;
+
+
+    &-trunk {
+      top: 10%;
+      left: -7%;
+      z-index: 12;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-leaf {
+      top: -10%;
+      left: -5%;
+      z-index: 12;
+      height: 40%;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-bottle {
+      position: absolute;
+      top: -10vh;
+      left: 6vw;
+      height: 900px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &-content {
+    width: 30vw;
+    height: 30vh;
+    @include flex($align: flex-start);
+    gap: 3vh;
+    flex-direction: column;
+    color: $color-tertiary;
+    position: absolute;
+    top: 35vh;
+    left: 20vw;
+    z-index: 12;
+
+    &-text {
+      @include subtitle;
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-title {
+      @include title;
+      opacity: 0;
+      visibility: hidden;
+      letter-spacing: 30px,
+    }
+
+    &-paragraph {
+      font-family: $font-subtitle;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1vw;
+      margin: 25px 0px;
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-link {
+      font-family: $font-subtitle;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1vw;
+      line-height: 17px;
+      letter-spacing: 0.1em;
+      color: $color-tertiary;
+    }
+  }
+
+  &-bottle {
+    position: relative;
+    left: 10vw;
+    top: -15vh;
+
+    &-content {
+      @include flex;
+      position: relative;
+    }
+
+    &-button {
+      position: absolute;
+      z-index: 20;
+      left: 200px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-icon {
+      color: $color-tertiary;
+      font-size: 20px;
+    }
+
+    &-line {
+      position: absolute;
+      z-index: 20;
+      right: -13vw;
+      width: 0px;
+    }
+  }
+}

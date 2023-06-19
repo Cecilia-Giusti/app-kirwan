@@ -10,13 +10,13 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
+
 }
 
-main {
-  @include screenFull;
-  @include flex;
+.wrapper {
+  overflow-x: hidden;
 }
+
 
 ul {
   -webkit-padding-start: 0;
@@ -40,4 +40,5 @@ button {
 
 main {
   position: relative;
+
 }

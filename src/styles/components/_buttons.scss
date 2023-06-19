@@ -14,3 +14,12 @@
     border-bottom: 1px solid $color-tertiary;
   }
 }
+
+.button-play {
+  width: 56px;
+  height: 56px;
+  background: $color-secondary;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
