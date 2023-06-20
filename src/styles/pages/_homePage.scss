@@ -24,8 +24,7 @@
 }
 
 .homeWinesQuotesSections {
-
-  width: 200vw;
+  width: 700vw;
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -38,16 +37,26 @@
     z-index: -1;
     -o-object-fit: cover;
     object-fit: cover;
+
+    &-first {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &-second {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 
 .section {
-  @include screenFull;
+  @include screenFull($widthSize: 100vw);
   @include flex;
 }
 
 .home {
-  @include screenFull($widthSize: 100vw);
+
 
   &-content {
     color: $color-tertiary;
@@ -63,12 +72,10 @@
 }
 
 .wines {
-  @include screenFull($widthSize: 100vw);
   position: relative;
 
   &-img {
     position: absolute;
-
 
     &-trunk {
       top: 10%;
@@ -99,51 +106,10 @@
   }
 
   &-content {
-    width: 30vw;
-    height: 30vh;
-    @include flex($align: flex-start);
-    gap: 3vh;
-    flex-direction: column;
-    color: $color-tertiary;
     position: absolute;
     top: 35vh;
     left: 20vw;
     z-index: 12;
-
-    &-text {
-      @include subtitle;
-      transform: translateY(-20px);
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    &-title {
-      @include title;
-      opacity: 0;
-      visibility: hidden;
-      letter-spacing: 30px,
-    }
-
-    &-paragraph {
-      font-family: $font-subtitle;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1vw;
-      margin: 25px 0px;
-      transform: translateY(-20px);
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    &-link {
-      font-family: $font-subtitle;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1vw;
-      line-height: 17px;
-      letter-spacing: 0.1em;
-      color: $color-tertiary;
-    }
   }
 
   &-bottle {
@@ -176,4 +142,57 @@
       width: 0px;
     }
   }
+}
+
+.quote {
+  width: 100vw;
+  position: relative;
+
+  &-title {
+    @include title;
+    color: $color-tertiary
+  }
+
+  &-first,
+  &-second {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    overflow: visible;
+    white-space: nowrap;
+  }
+
+  &-body {
+    @include flex;
+    gap: 200px;
+  }
+
+  &-bg-img {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: center center;
+  }
+
+  &-carrousel-img {
+    position: relative;
+    top: -10vh;
+    opacity: 0;
+    visibility: hidden
+  }
+}
+
+.local {
+  width: 100vw;
+  position: relative;
+  // background-image: url(../../../public/images/photo-terroir.png) center/contain;
+
+  // &-body {
+  //   @include flex;
+  //   gap: 200px;
+  // }
 }

@@ -1,0 +1,43 @@
+.contentText {
+    width: 30vw;
+    height: 30vh;
+    color: $color-tertiary;
+    @include flex($align: flex-start);
+    gap: 3vh;
+    flex-direction: column;
+
+    &-text {
+        @include subtitle;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &-title {
+        @include title;
+        opacity: 0;
+        visibility: hidden;
+        letter-spacing: 30px,
+    }
+
+    &-paragraph {
+        font-family: $font-subtitle;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1vw;
+        margin: 25px 0px;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &-link {
+        font-family: $font-subtitle;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1vw;
+        line-height: 17px;
+        letter-spacing: 0.1em;
+        color: $color-tertiary;
+    }
+}
