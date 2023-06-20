@@ -31,7 +31,7 @@ const loader = () => {
   const logo = document.getElementById("logoHeader");
   const navCircles = document.querySelector(".nav-list");
   const navItems = document.querySelectorAll(".nav-item");
-  const imgCastle = document.querySelector(".homeWinesQuotesSections-img-bg");
+  const imgCastle = document.querySelector(".homePageSections-img-bg");
   const text = document.querySelector(".home-content-text");
   const title = document.querySelector(".home-content-title");
   const btnLanguages = document.querySelector(".header-button-languages");
@@ -124,7 +124,7 @@ const scrollAnim = () => {
     autoAlpha: 0,
     ease: "none",
     scrollTrigger: {
-      trigger: ".homeWinesQuotesSections",
+      trigger: ".homePageSections",
       start: "90% 80%",
       end: "bottom 80%",
       scrub: 0.5,
@@ -135,7 +135,7 @@ const scrollAnim = () => {
     xPercent: -100 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
-      trigger: ".homeWinesQuotesSections",
+      trigger: ".homePageSections",
       pin: true,
       scrub: 1,
       snap: 1 / (sections.length - 1),
@@ -143,9 +143,7 @@ const scrollAnim = () => {
   });
 
   // Our-Wines Page Animation - On enter
-  const imgBgFirst = document.querySelector(
-    ".homeWinesQuotesSections-img-bg-first"
-  );
+  const imgBgFirst = document.querySelector(".homePageSections-img-bg-first");
   const winesSection = document.querySelector(".wines");
   const trunk = document.querySelector(".wines-img-trunk");
   const leaf = document.querySelector(".wines-img-leaf");
@@ -178,6 +176,7 @@ const scrollAnim = () => {
     delay: 1,
     scrollTrigger: {
       trigger: winesSection,
+
       start: `bottom 85%`,
       end: `bottom 80%`,
       toggleActions: "play reset restart reset",
@@ -210,6 +209,7 @@ const scrollAnim = () => {
     },
   });
 
+  // Btn Play
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: winesSection,
@@ -297,12 +297,10 @@ const scrollAnim = () => {
 
   //TODO Our wines page Animation - On leave
 
-  // Quotes page Animation
+  // Quotes page Animation - On start
   const quoteFirst = document.querySelector(".quote-first");
   const quoteSecond = document.querySelector(".quote-second");
-  const imgBgSecond = document.querySelector(
-    ".homeWinesQuotesSections-img-bg-second"
-  );
+  const imgBgSecond = document.querySelector(".homePageSections-img-bg-second");
   const textQuote = document.querySelector(".quote-content-text");
   const titleQuote = document.querySelector(".quote-content-title");
   const paragraphQuote = document.querySelector(".quote-content-paragraph");
@@ -313,9 +311,10 @@ const scrollAnim = () => {
   const tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: ".quote",
-      markers: true,
       start: "bottom 70%",
-      toggleActions: "play none none reset",
+      end: "bottom 60%",
+      markers: true,
+      toggleActions: "play reset none reset",
     },
   });
 
@@ -355,14 +354,6 @@ const scrollAnim = () => {
       duration: 4,
       ease: "slow",
     })
-    .to(
-      imgBgFirst,
-      {
-        autoAlpha: 0,
-        duration: 1,
-      },
-      "-=4"
-    )
     .to(
       quoteSecond,
       {
@@ -430,6 +421,86 @@ const scrollAnim = () => {
       },
       "-=1"
     );
+
+  //TODO Quotes section Animations - On leave
+
+  // Local section animations
+  const localImgBg = document.querySelector(".homePageSections-img-bg-third");
+  const localText = document.querySelector(".local-content-text");
+  const localTitle = document.querySelector(".local-content-title");
+  const localParagraph = document.querySelector(".local-content-paragraph");
+  const localLink = document.querySelector(".local .links-wrapper");
+  const localLinkText = document.querySelector(".local-content-link");
+  const btnLocal = document.querySelector(".local-buttonLine");
+
+  gsap.to(localImgBg, {
+    autoAlpha: 1,
+    duration: 3,
+    scrollTrigger: {
+      trigger: ".local",
+      start: "bottom 55%",
+      toggleActions: "play none none reset",
+    },
+  });
+
+  const tl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".local",
+      start: "bottom 52%",
+      end: `bottom 45%`,
+      toggleActions: "play reset restart reset",
+      markers: true,
+    },
+  });
+
+  // ContentText Animations
+  tl3
+    .to(localText, {
+      duration: 1,
+      y: "20px",
+      autoAlpha: 1,
+      delay: 1,
+    })
+    .to(
+      localTitle,
+      {
+        duration: 1,
+        letterSpacing: "5px",
+        autoAlpha: 1,
+        delay: 1,
+      },
+      "-=2"
+    )
+    .to(
+      localParagraph,
+      {
+        duration: 1,
+        y: "20px",
+        autoAlpha: 1,
+        delay: 1,
+      },
+      "-=2"
+    )
+    .to(
+      localLink,
+      {
+        duration: 1,
+        y: "20px",
+        autoAlpha: 1,
+        onComplete: () => {
+          lineLinkAnim(localLinkText);
+        },
+        delay: 1,
+      },
+      "-=2"
+    )
+    .to(btnLocal, {
+      autoAlpha: 1,
+      duration: 0.5,
+      onComplete: () => {
+        btnPlay();
+      },
+    });
 };
 
 const btnPlay = () => {
