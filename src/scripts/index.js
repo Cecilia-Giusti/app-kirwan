@@ -313,7 +313,6 @@ const scrollAnim = () => {
       trigger: ".quote",
       start: "bottom 70%",
       end: "bottom 60%",
-      markers: true,
       toggleActions: "play reset none reset",
     },
   });
@@ -449,7 +448,6 @@ const scrollAnim = () => {
       start: "bottom 52%",
       end: `bottom 45%`,
       toggleActions: "play reset restart reset",
-      markers: true,
     },
   });
 
@@ -501,6 +499,69 @@ const scrollAnim = () => {
         btnPlay();
       },
     });
+
+  //Factory section
+  const visitCard = document.querySelector(".factory-card-visit");
+  const factoryCard = document.querySelector(".factory-card-factories");
+  const factoryLink = document.querySelector(".factory .links-wrapper");
+  const factoryLinkTextVisit = document.querySelector(
+    ".factory-content-link-first"
+  );
+  const factoryLinkTextFactories = document.querySelector(
+    ".factory-content-link-second"
+  );
+
+  gsap.to(localImgBg, {
+    scale: 1.2,
+    transformOrigin: "right center",
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".factory",
+      start: "bottom 40%",
+      end: `bottom 30%`,
+
+      toggleActions: "play reset restart reset",
+    },
+  });
+
+  const tl4 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".factory",
+      start: "bottom 33.5%",
+      end: `bottom 25%`,
+      markers: true,
+      toggleActions: "play reset restart reset",
+    },
+  });
+
+  tl4
+    .fromTo(
+      visitCard,
+      {
+        y: "-5vh",
+      },
+      {
+        autoAlpha: 1,
+        y: "5vh",
+        duration: 1,
+        delay: 0.2,
+      }
+    )
+    .fromTo(
+      factoryCard,
+      {
+        y: "-5vh",
+      },
+      {
+        autoAlpha: 1,
+        y: "5vh",
+        duration: 1,
+        onComplete: () => {
+          lineLinkAnim(factoryLinkTextVisit);
+          lineLinkAnim(factoryLinkTextFactories);
+        },
+      }
+    );
 };
 
 const btnPlay = () => {

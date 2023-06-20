@@ -213,3 +213,47 @@
     transform: rotate(90deg);
   }
 }
+
+.factory {
+  &-body {
+    @include flex;
+    gap: 288px;
+  }
+
+  &-card {
+    width: 533px;
+    height: 586px;
+    position: relative;
+
+    &-visit {
+      background: url(../../../public/images/visites.png);
+      opacity: 0;
+      visibility: hidden;
+
+    }
+
+    &-factories {
+      background: url(../../../public/images/ateliers.png);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-title {
+      @include title;
+      color: $color-tertiary;
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .links-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
