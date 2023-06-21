@@ -167,7 +167,7 @@ const scrollAnim = () => {
     duration: 0.5,
     scrollTrigger: {
       trigger: winesSection,
-      start: "bottom 80%",
+      start: "bottom 85%",
       toggleActions: "play none none reset",
     },
   });
@@ -181,7 +181,6 @@ const scrollAnim = () => {
     delay: 1,
     scrollTrigger: {
       trigger: winesSection,
-      markers: true,
       start: `bottom 85%`,
       end: `bottom 80%`,
       toggleActions: "play reset restart reset",
@@ -192,8 +191,8 @@ const scrollAnim = () => {
     autoAlpha: 1,
     y: "20%",
     x: "8%",
-    delay: 1,
     duration: 2,
+    delay: 1,
     scrollTrigger: {
       trigger: winesSection,
       start: `bottom 85%`,
@@ -322,6 +321,21 @@ const scrollAnim = () => {
     },
   });
 
+  gsap.to(
+    imgBgSecond,
+    {
+      autoAlpha: 1,
+      duration: 1,
+      delay: 3.5,
+      scrollTrigger: {
+        trigger: ".quote",
+        start: "bottom 70%",
+        toggleActions: "play reset none reset",
+      },
+    },
+    "-=4"
+  );
+
   tl2
     .fromTo(
       quoteFirst,
@@ -362,14 +376,6 @@ const scrollAnim = () => {
       quoteSecond,
       {
         autoAlpha: 0,
-      },
-      "-=4"
-    )
-    .to(
-      imgBgSecond,
-      {
-        autoAlpha: 1,
-        duration: 1,
       },
       "-=4"
     )

@@ -218,13 +218,13 @@
     position: relative;
 
     &-visit {
-      background: url(../../../public/images/visites.png) center/contain;
+      background: url(./images/visites.png) center/contain;
       @include invisible;
 
     }
 
     &-factories {
-      background: url(../../../public/images/ateliers.png) center/contain;
+      background: url(./images/ateliers.png) center/contain;
       @include invisible;
     }
 
