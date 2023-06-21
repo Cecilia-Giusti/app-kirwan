@@ -96,9 +96,10 @@
 
     &-bottle {
       position: absolute;
-      top: -10vh;
+      top: -9vh;
       left: 6vw;
-      height: 900px;
+      width: 15vw;
+
       opacity: 0;
       visibility: hidden;
     }
@@ -124,7 +125,7 @@
     &-button {
       position: absolute;
       z-index: 20;
-      left: 200px;
+      left: 10vw;
       opacity: 0;
       visibility: hidden;
     }
@@ -162,7 +163,7 @@
 
   &-body {
     @include flex;
-    gap: 200px;
+    gap: 5vw;
   }
 
   &-bg-img {
@@ -175,10 +176,10 @@
 
   &-carrousel-img {
     position: relative;
-    top: -10vh;
+    top: -6vh;
     opacity: 0;
     visibility: hidden;
-    width: 40%;
+    width: 25vw;
   }
 }
 
@@ -217,23 +218,23 @@
 .factory {
   &-body {
     @include flex;
-    gap: 288px;
+    gap: 20vw;
   }
 
   &-card {
-    width: 533px;
-    height: 586px;
+    width: 30vw;
+    height: 33vw;
     position: relative;
 
     &-visit {
-      background: url(../../../public/images/visites.png);
+      background: url(../../../public/images/visites.png) center/contain;
       opacity: 0;
       visibility: hidden;
 
     }
 
     &-factories {
-      background: url(../../../public/images/ateliers.png);
+      background: url(../../../public/images/ateliers.png) center/contain;
       opacity: 0;
       visibility: hidden;
     }
@@ -242,7 +243,7 @@
       @include title;
       color: $color-tertiary;
       position: absolute;
-      top: -70px;
+      top: -8vh;
       left: 50%;
       transform: translateX(-50%);
     }

@@ -115,11 +115,8 @@ const loader = () => {
  * Animations when the user scrolls on the homepage
  */
 const scrollAnim = () => {
-  //Horizontal Scroll
+  // Text animation Begin
   const contentTextHome = document.querySelector(".home-content");
-
-  let sections = gsap.utils.toArray(".section");
-
   gsap.to(contentTextHome, {
     autoAlpha: 0,
     ease: "none",
@@ -127,9 +124,12 @@ const scrollAnim = () => {
       trigger: ".homePageSections",
       start: "90% 80%",
       end: "bottom 80%",
-      scrub: 0.5,
+      scrub: 1,
     },
   });
+
+  //Horizontal Scroll
+  let sections = gsap.utils.toArray(".section");
 
   gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
@@ -137,8 +137,13 @@ const scrollAnim = () => {
     scrollTrigger: {
       trigger: ".homePageSections",
       pin: true,
-      scrub: 1,
+      scrub: true,
       snap: 1 / (sections.length - 1),
+      onScrubComplete: function () {
+        let scrollVelocity = this.getVelocity() / 1000;
+        let animationTime = 1 / Math.abs(scrollVelocity);
+        gsap.to(sections, { duration: animationTime, ease: "power1.inOut" });
+      },
     },
   });
 
@@ -176,7 +181,7 @@ const scrollAnim = () => {
     delay: 1,
     scrollTrigger: {
       trigger: winesSection,
-
+      markers: true,
       start: `bottom 85%`,
       end: `bottom 80%`,
       toggleActions: "play reset restart reset",
@@ -529,7 +534,6 @@ const scrollAnim = () => {
       trigger: ".factory",
       start: "bottom 33.5%",
       end: `bottom 25%`,
-      markers: true,
       toggleActions: "play reset restart reset",
     },
   });
