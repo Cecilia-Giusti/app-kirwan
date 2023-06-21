@@ -45,8 +45,7 @@
 
     &-second,
     &-third {
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
     }
   }
 }
@@ -81,8 +80,7 @@
       left: -7%;
       z-index: 12;
       height: 100%;
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
     }
 
     &-leaf {
@@ -90,8 +88,7 @@
       left: -5%;
       z-index: 12;
       height: 40%;
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
     }
 
     &-bottle {
@@ -100,8 +97,7 @@
       left: 6vw;
       width: 15vw;
 
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
     }
   }
 
@@ -126,8 +122,7 @@
       position: absolute;
       z-index: 20;
       left: 10vw;
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
     }
 
 
@@ -155,8 +150,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
+    @include invisible;
     overflow: visible;
     white-space: nowrap;
   }
@@ -169,16 +163,14 @@
   &-bg-img {
     width: 100vw;
     height: 100vh;
-    opacity: 0;
-    visibility: hidden;
+    @include invisible;
     transform-origin: center center;
   }
 
   &-carrousel-img {
     position: relative;
     top: -6vh;
-    opacity: 0;
-    visibility: hidden;
+    @include invisible;
     width: 25vw;
   }
 }
@@ -201,8 +193,7 @@
     flex-direction: column-reverse;
     gap: 100px;
     margin-top: 50px;
-    opacity: 0;
-    visibility: hidden;
+    @include invisible;
   }
 
   &-button {
@@ -228,15 +219,13 @@
 
     &-visit {
       background: url(../../../public/images/visites.png) center/contain;
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
 
     }
 
     &-factories {
       background: url(../../../public/images/ateliers.png) center/contain;
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
     }
 
     &-title {

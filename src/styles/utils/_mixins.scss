@@ -16,6 +16,11 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
 @mixin title($weight: 400, $align: center) {
   font-family: $font-title;
   font-style: normal;

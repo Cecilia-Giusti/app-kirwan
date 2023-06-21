@@ -31,8 +31,7 @@
     @include flex($justify: space-around);
     position: relative;
     margin: auto;
-    visibility: hidden;
-    opacity: 0;
+    @include invisible;
     bottom: 40vh - 0.2;
   }
 
@@ -61,8 +60,7 @@
       color: $color-secondary;
       overflow: visible;
       white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
+      @include invisible;
       position: absolute;
       top: -20px;
     }

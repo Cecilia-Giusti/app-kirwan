@@ -10,8 +10,7 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    opacity: 0;
-    visibility: hidden;
+    @include invisible;
   }
 
   &-underline {

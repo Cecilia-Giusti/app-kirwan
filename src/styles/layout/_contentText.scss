@@ -9,14 +9,12 @@
     &-text {
         @include subtitle;
         transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden;
+        @include invisible;
     }
 
     &-title {
         @include title;
-        opacity: 0;
-        visibility: hidden;
+        @include invisible;
         letter-spacing: 30px,
     }
 
@@ -27,8 +25,7 @@
         font-size: 1.2vw;
         margin: 1vh 0px;
         transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden;
+        @include invisible;
     }
 
     &-link {
